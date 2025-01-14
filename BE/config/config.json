@@ -1,0 +1,19 @@
+{
+  "development": {     
+    "username": "root",
+    "password": "",
+    "database": "marvec_dashboard",
+    "host": "localhost",
+    "dialect": "mysql",
+    "migrationStorage": "sequelize",
+    "migrationStorageTableName": "SequelizeMeta",
+    "migrationsPath": "./migrations"
+  },
+  "production": {
+    "username": "devict",
+    "password": "Makassar@2023DB",
+    "database": "marvec_dashboard",
+    "host": "103.151.20.127",
+    "dialect": "mysql"
+  }
+}
