@@ -35,6 +35,24 @@ const Dashboard = () => {
 
     return (
         <Box>
+            <Grid container sx={{
+                padding: 2
+            }}>
+                <Grid item xs={12} >
+                    <Typography
+                    fontFamily={'sans-serif'}
+                    fontWeight={700}
+                    fontSize={30}
+                    align="center"
+                    textTransform={"uppercase"}
+                    sx={{
+                        color: 'rgb(199, 10, 10)'
+                    }}
+                    >
+                        {"Makassar Vitual Economic Center"}
+                    </Typography>
+                </Grid>
+            </Grid>
             <Grid container direction={"row"}>
                 {
                     dataDashboard
@@ -63,8 +81,8 @@ const Dashboard = () => {
                                                 <Typography color={'white'} fontSize={12}>
                                                     {
                                                         element.namaAplikasi.length > 15 ?
-                                                        element.namaAplikasi.substring(0, 15) + ". . ."
-                                                        : element.namaAplikasi
+                                                            element.namaAplikasi.substring(0, 15) + ". . ."
+                                                            : element.namaAplikasi
                                                     }
                                                 </Typography>
                                             </Grid>
@@ -72,6 +90,7 @@ const Dashboard = () => {
                                                 <Button
                                                     color="success"
                                                     variant="contained"
+                                                    size="small"
                                                     sx={{
                                                         textTransform: 'capitalize'
                                                     }}
