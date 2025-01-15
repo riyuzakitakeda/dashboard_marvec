@@ -10,6 +10,7 @@
     "api",
     "mysql2"
   ],
+  "script": "node --env-file=.env ./server.js",
   "main": "server.js",
   "author": "riyuzaki",
   "license": "ISC",

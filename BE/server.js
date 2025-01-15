@@ -1,9 +1,9 @@
 const express = require("express");
 const running = process.env.ENVIRONTMENT
 
-if(running == "production"){
-  require('dotenv').config({ path: '.env.production' })
-};
+//if(running == "production"){
+//  require('dotenv').config({ path: '.env.production' })
+//};
 
 const UserRoute = require("./routes/user.routes");
 const ListDashboardRoute = require("./routes/listdashboard.routes");
@@ -39,7 +39,7 @@ app.use("/api/listdashboard", ListDashboardRoute);
 
 
 // set port, listen for requests
-const PORT = process.env.PORT || 8060;
+const PORT = process.env.PORT || 8099;
 app.listen(PORT, () => {
   console.log(`[*] Server is running on port ${PORT}.`);
 });

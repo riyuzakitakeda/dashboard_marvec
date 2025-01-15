@@ -1,7 +1,7 @@
 {
-  "development": {     
-    "username": "root",
-    "password": "",
+  "development": {
+    "username": "devict",
+    "password": "Makassar@2023DB",
     "database": "marvec_dashboard",
     "host": "localhost",
     "dialect": "mysql",
