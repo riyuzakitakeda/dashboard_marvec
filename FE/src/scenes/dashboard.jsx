@@ -69,6 +69,11 @@ const Dashboard = () => {
                                     width: "100%"
                                 }}>
                                     <Grid item container direction={'row'}>
+                                        <Grid item xs={12}>
+                                            <Typography color={'white'} fontSize={10}>
+                                                {element.namaOpd}
+                                            </Typography>
+                                        </Grid>
                                         <Grid
                                             justifyContent={'space-between'}
                                             direction={'column'}
