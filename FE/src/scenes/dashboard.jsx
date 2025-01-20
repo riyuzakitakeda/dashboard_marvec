@@ -5,6 +5,7 @@ import { HeaderData } from "../data/headerCostum";
 import { useAuth } from "../auth/auth_provider";
 import "../tailwind.css"
 import {Link} from "react-router-dom";
+import Logo from "../assets/image/makassar-white.png";
 
 const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
     return (
@@ -63,26 +64,33 @@ const Dashboard = () => {
     console.log(dataDashboard)
 
     return (
-        <div className={`bg-[url(/src/assets/image/background_losari.webp)] bg-no-repeat bg-bottom h-screen w-screen`}>
+        <div className={`bg-[url(/src/assets/image/background_losari.webp)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-screen`}>
             <div>
                 <Grid container sx={{
-                    padding: 2
+                    padding: 2,
+                    position: 'relative',
+                    zIndex: 1,
+                    display: "flex",
+                    justifyContent: 'center',
+                    alignItems: 'end'
                 }}>
-                    <Grid item xs={12} sx={{marginTop: 5}}>
+                    <Grid item>
+                        <img src={Logo} alt="icon" style={{ width: 180, height: 110, marginRight: 10 }} />
+                    </Grid>
+                    <Grid item>
                         <Typography
+                            className={"drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,5)] text-[#EA3525] mb-2"}
                             fontFamily={'sans-serif'}
                             fontWeight={700}
-                            fontSize={30}
-                            align="center"
+                            fontSize={48}
+                            align="left"
                             textTransform={"uppercase"}
-                            sx={{
-                                color: 'rgb(199, 10, 10)'
-                            }}
                         >
-                            {"Makassar Vitual Economic Center"}
+                            {"Makassar Virtual Economic Center"}
                         </Typography>
                     </Grid>
                 </Grid>
+
                 <div className={"mt-20 flex justify-center"}>
                     <div className={"grid gap-x-4 gap-y-16 gap grid-cols-3 sm:grid-cols-4 8:grid-cols-8 9:grid-cols-9 10:grid-cols-10 12:grid-cols-12 "}>
                         {
