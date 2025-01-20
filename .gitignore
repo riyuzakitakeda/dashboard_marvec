@@ -1,2 +1,4 @@
 FE/.idea/
 BE/.idea/
+FE/node_modules
+FE/package-lock.json
