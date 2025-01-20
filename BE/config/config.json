@@ -3,7 +3,7 @@
     "username": "devict",
     "password": "Makassar@2023DB",
     "database": "marvec_dashboard",
-    "host": "localhost",
+    "host": "103.151.20.127",
     "dialect": "mysql",
     "migrationStorage": "sequelize",
     "migrationStorageTableName": "SequelizeMeta",

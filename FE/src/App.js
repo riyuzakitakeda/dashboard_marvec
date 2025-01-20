@@ -16,7 +16,7 @@ import { AuthProvider, useAuth } from "./auth/auth_provider";
 import Login from "./scenes/login";
 import SplashScreen from "./scenes/global/spashscreen";
 import DaftarUser from "./scenes/admin/akun";
-import Dashboard from "./scenes/dashboard";
+import Dashboard from "./scenes/dashboard.jsx";
 import SideMenu from "./scenes/global/Menu";
 import DaftarKategori from "./scenes/admin/kategori";
 import DaftarSKPD from "./scenes/admin/skpd";
