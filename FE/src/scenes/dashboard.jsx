@@ -8,13 +8,13 @@ import {Link} from "react-router-dom";
 
 const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
     return (
-        <div className={"relative text-white w-[200px] h-[120px] rounded-xl bg-gradient-to-tr from-[#280606] from-0% to-[#8E1616] to-65% drop-shadow-xl "}>
-            <p className={"absolute left-3 top-2 font-sans font-extrabold text-2xl"}>{number}</p>
-            <div className={"w-full mt-6 flex justify-center font-sans text-center"}>
+        <div className={"relative text-white w-[140px] h-[86px] rounded-xl bg-gradient-to-tr from-[#280606] from-0% to-[#8E1616] to-65% drop-shadow-xl "}>
+            <p className={"absolute left-2 top-2 font-sans font-extrabold text-2xl"}>{number}</p>
+            <div className={"w-full mt-3 ml-12 flex justify-start font-sans text-start"}>
                 <div>
                     <p className={"text-[9px]"}>{namaOpd}</p>
-                    <p className={"text-[16px] font-bold"}>{namaAplikasi.length > 15
-                                                    ? namaAplikasi.substring(0, 15) + "..."
+                    <p className={"text-[12spx] font-bold"}>{namaAplikasi.length > 9
+                                                    ? namaAplikasi.substring(0, 9) + "..."
                                                     : namaAplikasi}</p>
                 </div>
             </div>
@@ -63,12 +63,12 @@ const Dashboard = () => {
     console.log(dataDashboard)
 
     return (
-        <div className={`bg-[url(/src/assets/image/background_losari.webp)]`}>
+        <div className={`bg-[url(/src/assets/image/background_losari.webp)] bg-no-repeat bg-bottom h-screen w-screen`}>
             <div>
                 <Grid container sx={{
                     padding: 2
                 }}>
-                    <Grid item xs={12}>
+                    <Grid item xs={12} sx={{marginTop: 5}}>
                         <Typography
                             fontFamily={'sans-serif'}
                             fontWeight={700}
@@ -83,8 +83,8 @@ const Dashboard = () => {
                         </Typography>
                     </Grid>
                 </Grid>
-                <div className={"flex justify-center"}>
-                    <div className={"grid gap-x-4 gap-y-10 gap grid-cols-1 bigphone:grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 xl:grid-cols-6 2xl:grid-cols-7 bigscreen:grid-cols-9"}>
+                <div className={"mt-20 flex justify-center"}>
+                    <div className={"grid gap-x-4 gap-y-16 gap grid-cols-3 sm:grid-cols-4 8:grid-cols-8 9:grid-cols-9 10:grid-cols-10 12:grid-cols-12 "}>
                         {
                             dataDashboard
                                 ? dataDashboard.map((element, index) => (
