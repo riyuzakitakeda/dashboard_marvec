@@ -1,10 +1,9 @@
-import { Box, Button, Card, Grid, Typography } from "@mui/material";
+import { Grid, Typography } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { HeaderData } from "../data/headerCostum";
 import { useAuth } from "../auth/auth_provider";
 import "../tailwind.css"
-import {Link} from "react-router-dom";
 import Logo from "../assets/image/makassar-white.png";
 
 const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
@@ -24,8 +23,8 @@ const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
             {/*Bottom Part*/}
             <div
                 className={"flex items-center justify-center absolute rounded-b-xl bottom-0 left-0 w-full h-1/3 bg-gradient-to-br from-[#888888] from-0% via-[#DEDEDE] via-40% to-white to-70%"}>
-                <Link to={url} className={"text-[#8E1616] font-bold font-sans text-center items-center"}>Open
-                    Link</Link>
+                <a href={url} target={"_blank"} className={"text-[#8E1616] font-bold font-sans text-center items-center"}>Open
+                    Link</a>
                 <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px"
                      fill="#8E1616">
                     <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
@@ -66,43 +65,41 @@ const Dashboard = () => {
     console.log(dataDashboard)
 
     return (
-        <div className={`bg-[url(/src/assets/image/background_losari.webp)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-screen`}>
-            <div>
-                <Grid container sx={{
-                    padding: 2,
-                    position: 'relative',
-                    zIndex: 1,
-                    display: "flex",
-                    justifyContent: 'center',
-                    alignItems: 'end'
-                }}>
-                    <Grid item>
-                        <img src={Logo} alt="icon" style={{ width: 180, height: 110, marginRight: 10 }} />
-                    </Grid>
-                    <Grid item>
-                        <Typography
-                            className={"drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,5)] text-[#EA3525] mb-2"}
-                            fontFamily={'sans-serif'}
-                            fontWeight={700}
-                            fontSize={48}
-                            align="left"
-                            textTransform={"uppercase"}
-                        >
-                            {"Makassar Virtual Economic Center"}
-                        </Typography>
-                    </Grid>
+        <div className={`bg-[url(/src/assets/image/background_losari.webp)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-[100%] overflow-x-hidden`}>
+            <Grid container sx={{
+                padding: 2,
+                position: 'relative',
+                zIndex: 1,
+                display: "flex",
+                justifyContent: 'center',
+                alignItems: 'end'
+            }}>
+                <Grid item>
+                    <img src={Logo} alt="icon" style={{ width: 180, height: 110, marginRight: 10 }} />
                 </Grid>
+                <Grid item>
+                    <Typography
+                        className={"drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,5)] text-[#EA3525] mb-2"}
+                        fontFamily={'sans-serif'}
+                        fontWeight={700}
+                        fontSize={48}
+                        align="left"
+                        textTransform={"uppercase"}
+                    >
+                        {"Makassar Virtual Economic Center"}
+                    </Typography>
+                </Grid>
+            </Grid>
 
-                <div className={"mt-20 flex justify-center"}>
-                    <div className={"grid gap-x-4 gap-y-16 gap grid-cols-3 sm:grid-cols-4 8:grid-cols-8 9:grid-cols-9 10:grid-cols-10 12:grid-cols-12 "}>
-                        {
-                            dataDashboard
-                                ? dataDashboard.map((element, index) => (
-                                    <DashboardCard number={index+1} namaAplikasi={element.namaAplikasi} namaOpd={element.namaOpd} url={element.url}/>
-                                ))
-                                : <p>''</p>
-                        }
-                    </div>
+            <div className={"mt-20 flex justify-center"}>
+                <div className={"grid gap-x-4 gap-y-16 gap grid-cols-3 sm:grid-cols-4 8:grid-cols-8 9:grid-cols-9 10:grid-cols-10 12:grid-cols-12 "}>
+                    {
+                        dataDashboard
+                            ? dataDashboard.map((element, index) => (
+                                <DashboardCard number={index+1} namaAplikasi={element.namaAplikasi} namaOpd={element.namaOpd} url={element.url}/>
+                            ))
+                            : <p>''</p>
+                    }
                 </div>
             </div>
         </div>
