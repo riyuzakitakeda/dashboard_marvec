@@ -14,9 +14,11 @@ const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
             <div className={"w-full mt-3 ml-12 flex justify-start font-sans text-start"}>
                 <div>
                     <p className={"text-[9px]"}>{namaOpd}</p>
-                    <p className={"text-[12spx] font-bold"}>{namaAplikasi.length > 9
-                                                    ? namaAplikasi.substring(0, 9) + "..."
-                                                    : namaAplikasi}</p>
+                    <p className={"text-[12spx] font-bold"} title={namaAplikasi}>
+                        {namaAplikasi.length > 9
+                            ? namaAplikasi.substring(0, 9) + "..."
+                            : namaAplikasi}
+                    </p>
                 </div>
             </div>
             {/*Bottom Part*/}

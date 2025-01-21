@@ -22,6 +22,7 @@ import DaftarKategori from "./scenes/admin/kategori";
 import DaftarSKPD from "./scenes/admin/skpd";
 import Barang from "./scenes/admin/barang";
 import DaftarSetting from "./scenes/admin/setting";
+import Frame from "./scenes/frame";
 
 // Component to protect routes based on user roles
 const ProtectedRoute = ({ allowedRoles, children }) => {
@@ -57,6 +58,7 @@ const App = () => {
         <Route index element={<Dashboard />} />
         <Route path="login" element={<Login />} />
         <Route path="dashboard" element={<Dashboard />} />
+        <Route path="app" element={<Frame />} />
 
         {/* Protected Admin Routes */}
         <Route path="admin" element={<ProtectedLayout />}>
