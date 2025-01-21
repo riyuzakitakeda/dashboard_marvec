@@ -1,7 +1,5 @@
-import { Box, Button, Grid, Typography } from "@mui/material";
-import React, { useEffect, useState } from "react";
-import { HeaderData } from "../data/headerCostum";
-import { useAuth } from "../auth/auth_provider";
+import { Box, Grid, Typography } from "@mui/material";
+import React  from "react";
 import Logo from '../assets/image/makassar-white.png';
 import PatternImage from '../assets/image/patternbg.png'
 import "../tailwind.css"
@@ -51,6 +49,7 @@ const Frame = () => {
             </div>
 
             <iframe
+                title={"aplikasi"}
                 src={"https://makassarv2.sakti112.id/login"}
                 className="w-[80%] h-[80vh] mx-auto rounded-lg"
             />
