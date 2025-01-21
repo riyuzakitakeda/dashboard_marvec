@@ -1,11 +1,25 @@
-import { Box, Grid, Typography } from "@mui/material";
-import React  from "react";
+import {Box, CircularProgress, Grid, Typography} from "@mui/material";
+import React, {useEffect, useState} from "react";
 import Logo from '../assets/image/makassar-white.png';
 import PatternImage from '../assets/image/patternbg.png'
 import "../tailwind.css"
+import Cookies from "js-cookie";
+import {useNavigate} from "react-router-dom";
 
 
 const Frame = () => {
+    const [isLoading, setLoading] = useState(true);
+    const url = Cookies.get('url')
+    const navigate = useNavigate();
+
+    useEffect(() => {
+        try {
+            new URL(url)
+        } catch (e) {
+            console.error("Bukan sebuah URL: `"+url+"`")
+            navigate("/")
+        }
+    }, [url]);
 
     return (
         <Box sx={{
@@ -48,12 +62,55 @@ const Frame = () => {
                 </Grid>
             </div>
 
-            <iframe
-                title={"aplikasi"}
-                src={"https://makassarv2.sakti112.id/login"}
-                className="w-[80%] h-[80vh] mx-auto rounded-lg"
-            />
+            <div className={"flex items-center justify-center w-[80%] h-[80vh] mx-auto"}>
+                {/*Loading animation*/}
+                <div hidden={!isLoading}>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            paddingX: 3,
+                            marginY: 2,
+                        }}
+                    >
 
+                        <Box alignItems={"center"} display={"flex"}>
+                            <Typography variant="h4" color={"#FFFFFF"}>
+                                {'Memuat Aplikasi'}
+                            </Typography>
+
+                        </Box>
+                    </Box>
+                    <Box
+                        sx={{
+                            display: "flex",
+                            flexDirection: "column",
+                            alignItems: "center",
+                            paddingX: 3,
+                            marginY: 4,
+                        }}
+                    >
+                        <CircularProgress
+                            sx={{
+                                color: "#FFF000",
+                            }}
+                            size={50}
+                            thickness={7}
+                        />
+                    </Box>
+                </div>
+
+
+                <iframe
+                    hidden={isLoading}
+                    title={"aplikasi"}
+                    src={url}
+                    className="h-full w-full rounded-xl"
+                    onLoad={() => setLoading(false)}
+                    onError={(e) => console.log(e.target)}
+                />
+            </div>
         </Box>
     );
 }

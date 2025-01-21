@@ -6,8 +6,14 @@ import { useAuth } from "../auth/auth_provider";
 import "../tailwind.css"
 import Logo from "../assets/image/makassar-white.png";
 import LogoPemkot from "../assets/image/logoPemkot.png";
+import Cookies from "js-cookie"
 
 const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
+    const handleClick = () => {
+        Cookies.set('url', url, { expires: 1, path: '' })
+        window.open('#/app')
+    }
+
     return (
         <div className={"relative text-white w-[140px] h-[86px] rounded-xl bg-gradient-to-tr from-[#280606] from-0% to-[#8E1616] to-65% drop-shadow-xl "}>
             <p className={"absolute left-2 top-2 font-sans font-extrabold text-2xl"}>{number}</p>
@@ -23,15 +29,16 @@ const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
             </div>
 
             {/*Bottom Part*/}
-            <div
+            <button
+                onClick={handleClick}
                 className={"flex items-center justify-center absolute rounded-b-xl bottom-0 left-0 w-full h-1/3 bg-gradient-to-br from-[#888888] from-0% via-[#DEDEDE] via-40% to-white to-70%"}>
-                <a href={url} target={"_blank"} rel="noreferrer" className={"text-[#8E1616] font-bold font-sans text-center items-center"}>Open
-                    Link</a>
+                <p className={"text-[#8E1616] font-bold font-sans text-center items-center"}>Open
+                    Link</p>
                 <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px"
                      fill="#8E1616">
                     <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
                 </svg>
-            </div>
+            </button>
         </div>
     )
 }
@@ -92,12 +99,13 @@ const Dashboard = () => {
                     </Grid>
                 </Grid>
 
-                <div className={"mt-10 flex justify-center"}>
+                <div className={"mt-10 flex justify-center mb-2"}>
                     <div className={"grid gap-x-4 gap-y-16 gap grid-cols-3 sm:grid-cols-4 8:grid-cols-8 9:grid-cols-9 10:grid-cols-10 12:grid-cols-12 "}>
                         {
                             dataDashboard
                                 ? dataDashboard.map((element, index) => (
                                     <DashboardCard number={index+1}
+                                                   key={index+1}
                                                    namaAplikasi={element.namaAplikasi}
                                                    namaOpd={element.namaOpd}
                                                    url={element.url}/>
