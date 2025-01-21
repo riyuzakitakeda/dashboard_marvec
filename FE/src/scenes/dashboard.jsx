@@ -66,6 +66,7 @@ const Dashboard = () => {
     console.log(dataDashboard)
 
     return (
+        <>
         <div className={`bg-[url(/src/assets/image/background_losari.webp)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-[100%] overflow-x-hidden`}>
             <Grid container sx={{
                 padding: 2,
@@ -86,7 +87,7 @@ const Dashboard = () => {
                         fontSize={48}
                         align="left"
                         textTransform={"uppercase"}
-                    >
+                        >
                         {"Makassar Virtual Economic Center"}
                     </Typography>
                 </Grid>
@@ -96,29 +97,29 @@ const Dashboard = () => {
                 <div className={"grid gap-x-4 gap-y-16 gap grid-cols-3 sm:grid-cols-4 8:grid-cols-8 9:grid-cols-9 10:grid-cols-10 12:grid-cols-12 "}>
                     {
                         dataDashboard
-                            ? dataDashboard.map((element, index) => (
-                                <DashboardCard number={index+1} namaAplikasi={element.namaAplikasi} namaOpd={element.namaOpd} url={element.url}/>
-                            ))
-                            : <p>''</p>
+                        ? dataDashboard.map((element, index) => (
+                            <DashboardCard number={index+1} namaAplikasi={element.namaAplikasi} namaOpd={element.namaOpd} url={element.url}/>
+                        ))
+                        : <p>''</p>
                     }
                 </div>
             </div>
 
+        </div>
                 <Box
                 sx={{
-                backgroundColor: "#7A0D0D",
-                color: "white",
-                textAlign: "center",
-                padding: 5,
-                position: "absolute",
-                bottom: 0,
-                width: "100%",
-                display: "flex",
-                justifyContent: "space-between",  
-                alignItems: "center",
-                marginTop: 4,
+                    backgroundColor: "#7A0D0D",
+                    color: "white",
+                    textAlign: "center",
+                    padding: 5,
+                    position: "relative",
+                    bottom: 0,
+                    width: "100%",
+                    display: "flex",
+                    justifyContent: "space-between",  
+                    alignItems: "center",
                 }}
-            >
+                >
             
                 <Box sx={{ display: "flex", alignItems: "center", marginLeft: 8, flexDirection: "row" }}>
                 <img src={LogoPemkot} alt="Logo Pemkot" style={{ width: 60, height: 75}} />
@@ -175,7 +176,7 @@ const Dashboard = () => {
                     </Box>
                 
         </Box>
-        </div>
+                    </>
     );
 }
 
