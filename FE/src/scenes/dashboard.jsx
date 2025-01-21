@@ -93,7 +93,7 @@ const Dashboard = () => {
                 </Grid>
             </Grid>
 
-            <div className={"mt-20 flex justify-center"}>
+            <div className={"mt-10 flex justify-center"}>
                 <div className={"grid gap-x-4 gap-y-16 gap grid-cols-3 sm:grid-cols-4 8:grid-cols-8 9:grid-cols-9 10:grid-cols-10 12:grid-cols-12 "}>
                     {
                         dataDashboard
