@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.e41d56b1.css",
-    "main.js": "/static/js/main.5fa3ab10.js",
+    "main.js": "/static/js/main.5e990d36.js",
     "static/js/453.16de3f8c.chunk.js": "/static/js/453.16de3f8c.chunk.js",
     "static/media/patternbg.png": "/static/media/patternbg.dc337611e442469c5bb7.png",
     "static/media/backgroud_login.png": "/static/media/backgroud_login.9046279b781deb321bef.png",
@@ -14,11 +14,11 @@
     "static/media/logo_musrembang.png": "/static/media/logo_musrembang.307352ecdb821bf3c984.png",
     "index.html": "/index.html",
     "main.e41d56b1.css.map": "/static/css/main.e41d56b1.css.map",
-    "main.5fa3ab10.js.map": "/static/js/main.5fa3ab10.js.map",
+    "main.5e990d36.js.map": "/static/js/main.5e990d36.js.map",
     "453.16de3f8c.chunk.js.map": "/static/js/453.16de3f8c.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.e41d56b1.css",
-    "static/js/main.5fa3ab10.js"
+    "static/js/main.5e990d36.js"
   ]
 }
