@@ -16,6 +16,8 @@
     "@testing-library/user-event": "^13.5.0",
     "@types/react": "18.2.0",
     "@types/react-dom": "18.2.1",
+    "core-js": "^3.40.0",
+    "js-cookie": "^3.0.5",
     "prop-types": "15.8.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
@@ -35,7 +37,8 @@
   },
   "scripts": {
     "start": "react-scripts start",
-    "startdev": "react-app-rewired start",
+    "watch:tailwind": "npx tailwindcss -i ./src/index.css -o ./src/tailwind.css --watch",
+    "startdev": "react-app-rewired start & npm run watch:tailwind && kill $!",
     "build:stage": "env-cmd -f ./.env.staging npm run-script build",
     "build": "react-scripts build",
     "test": "react-scripts test",
