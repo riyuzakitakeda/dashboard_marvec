@@ -1,10 +1,11 @@
-import { Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { HeaderData } from "../data/headerCostum";
 import { useAuth } from "../auth/auth_provider";
 import "../tailwind.css"
 import Logo from "../assets/image/makassar-white.png";
+import LogoPemkot from "../assets/image/logoPemkot.png";
 
 const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
     return (
@@ -102,6 +103,78 @@ const Dashboard = () => {
                     }
                 </div>
             </div>
+
+                <Box
+                sx={{
+                backgroundColor: "#7A0D0D",
+                color: "white",
+                textAlign: "center",
+                padding: 5,
+                position: "relative",
+                bottom: 0,
+                width: "100%",
+                display: "flex",
+                justifyContent: "space-between",  
+                alignItems: "center",
+                marginTop: 4,
+                }}
+            >
+            
+                <Box sx={{ display: "flex", alignItems: "center", marginLeft: 8, flexDirection: "row" }}>
+                <img src={LogoPemkot} alt="Logo Pemkot" style={{ width: 60, height: 75}} />
+                    
+                    <Box sx={{
+                        display: "flex",
+                        flexDirection: "column",
+                        textAlign: "left",
+                        marginLeft: 2
+                    }}>
+                        <Typography sx={{fontWeight: "bold", fontSize: 18}}>
+                            Dinas Komunikasi dan Informatika
+                        </Typography>
+                        <Typography sx={{ fontWeight: 'light'}}>
+                            Kota Makassar
+                        </Typography>
+                        <Typography variant="body2" sx={{ flex: 1 }}>
+                        &copy; Copyright 2025 
+                        </Typography>
+                    </Box>
+                </Box>
+
+        
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "column",
+                    justifyContent: "flex-end",
+                    marginRight: 8
+                }}>
+
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                }}>
+                    <Typography >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M480-480q33 0 56.5-23.5T560-560q0-33-23.5-56.5T480-640q-33 0-56.5 23.5T400-560q0 33 23.5 56.5T480-480Zm0 400Q319-217 239.5-334.5T160-552q0-150 96.5-239T480-880q127 0 223.5 89T800-552q0 100-79.5 217.5T480-80Z"/></svg>
+                    </Typography>
+                    <Typography sx={{marginLeft: 1}} >
+                    Jl. A.P.Pettarani No.62, Makassar, 90232
+                    </Typography>
+                </Box>
+                <Box sx={{
+                    display: "flex",
+                    flexDirection: "row",
+                    marginTop: 1
+                }}>
+                    <Typography >
+                    <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed"><path d="M160-160q-33 0-56.5-23.5T80-240v-480q0-33 23.5-56.5T160-800h640q33 0 56.5 23.5T880-720v480q0 33-23.5 56.5T800-160H160Zm320-280 320-200v-80L480-520 160-720v80l320 200Z"/></svg>
+                    </Typography>
+                    <Typography sx={{marginLeft: 1}}>
+                    diskominfo@makassar.go.id
+                    </Typography>
+                </Box>
+                    </Box>
+                
+        </Box>
         </div>
     );
 }
