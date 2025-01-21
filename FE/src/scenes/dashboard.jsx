@@ -110,7 +110,7 @@ const Dashboard = () => {
                 color: "white",
                 textAlign: "center",
                 padding: 5,
-                position: "relative",
+                position: "absolute",
                 bottom: 0,
                 width: "100%",
                 display: "flex",
