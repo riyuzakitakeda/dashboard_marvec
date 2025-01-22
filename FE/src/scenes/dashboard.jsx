@@ -7,7 +7,7 @@ import "../tailwind.css"
 import Logo from "../assets/image/makassar-white.png";
 import LogoPemkot from "../assets/image/logoPemkot.png";
 
-const DashboardCard = ({id, number, namaAplikasi, namaOpd, url}) => {
+const DashboardCard = ({id, number, namaAplikasi, namaOpd}) => {
 
     return (
         <div className={"relative text-white w-[140px] h-[86px] rounded-xl bg-gradient-to-tr from-[#280606] from-0% to-[#8E1616] to-65% drop-shadow-xl "}>
@@ -25,6 +25,7 @@ const DashboardCard = ({id, number, namaAplikasi, namaOpd, url}) => {
 
             {/*Bottom Part*/}
             <a
+                target={"_blank"} rel={"noreferrer"}
                 href={`#/app/${id}`}
                 className={"flex items-center justify-center absolute rounded-b-xl bottom-0 left-0 w-full h-1/3 bg-gradient-to-br from-[#888888] from-0% via-[#DEDEDE] via-40% to-white to-70%"}>
                 <p className={"text-[#8E1616] font-bold font-sans text-center items-center"}>Open
@@ -104,7 +105,7 @@ const Dashboard = () => {
                                                    key={index+1}
                                                    namaAplikasi={element.namaAplikasi}
                                                    namaOpd={element.namaOpd}
-                                                   url={element.url}/>
+                                                   />
                                 ))
                                 : <p>''</p>
                         }

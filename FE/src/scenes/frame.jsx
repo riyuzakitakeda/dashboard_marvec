@@ -6,6 +6,7 @@ import "../tailwind.css"
 import {useNavigate, useParams} from "react-router-dom";
 import {useAuth} from "../auth/auth_provider";
 import {HeaderData} from "../data/headerCostum";
+import "../tailwind.css"
 
 
 const Frame = () => {
@@ -80,12 +81,12 @@ const Frame = () => {
                 <Grid item>
                     <img src={Logo} alt="icon" style={{ width: 180, height: 110, marginRight: 10 }} />
                 </Grid>
-                <Grid item className="flex justify-between w-full" >
+                <div item className="flex justify-between w-full mt-1" >
                     <Typography
-                    className="drop-shadow-[0_2.2px_2.2px_rgba(255,255,255,5)] text-[#EA3525] mb-2"
+                    className="drop-shadow-[0_2.2px_2.2px_rgba(255,255,255,5)] text-[#EA3525]"
                     fontFamily="sans-serif"
                     fontWeight={700}
-                    fontSize={32}
+                    fontSize={26}
                     align="left"
                     textTransform="uppercase"
                     >
@@ -103,7 +104,7 @@ const Frame = () => {
                     >
                     {dataDashboard ? dataDashboard.namaAplikasi : ""}
                     </Typography>
-                </Grid>
+                </div>
             </div>
 
 
