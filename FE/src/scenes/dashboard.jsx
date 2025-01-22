@@ -10,7 +10,8 @@ import Cookies from "js-cookie"
 
 const DashboardCard = ({number, namaAplikasi, namaOpd, url}) => {
     const handleClick = () => {
-        Cookies.set('url', url, { expires: 1, path: '' })
+        Cookies.set('url', url,  { expires: 1, path: '' })
+        Cookies.set('namaAplikasi', namaAplikasi,  { expires: 1, path: '' })
         window.open('#/app')
     }
 

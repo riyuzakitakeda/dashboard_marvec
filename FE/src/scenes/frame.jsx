@@ -1,6 +1,6 @@
 import {Box, CircularProgress, Grid, Typography} from "@mui/material";
 import React, {useEffect, useState} from "react";
-import Logo from '../assets/image/makassar-white.png';
+import Logo from '../assets/image/makassar.png';
 import PatternImage from '../assets/image/patternbg.png'
 import "../tailwind.css"
 import Cookies from "js-cookie";
@@ -10,7 +10,10 @@ import {useNavigate} from "react-router-dom";
 const Frame = () => {
     const [isLoading, setLoading] = useState(true);
     const url = Cookies.get('url')
+    const namaAplikasi = Cookies.get('namaAplikasi')
     const navigate = useNavigate();
+
+
 
     useEffect(() => {
         try {
@@ -44,23 +47,36 @@ const Frame = () => {
                 zIndex: -1
             }
         }}>
-            <div className="flex justify-center items-end mb-4">
+           <div className="flex justify-start items-center mb-1 row" style={{marginLeft: '160px'}}>
                 <Grid item>
                     <img src={Logo} alt="icon" style={{ width: 180, height: 110, marginRight: 10 }} />
                 </Grid>
-                <Grid item>
+                <Grid item className="flex justify-between w-full" >
                     <Typography
-                        className={"drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,5)] text-[#EA3525] mb-2"}
-                        fontFamily={'sans-serif'}
-                        fontWeight={700}
-                        fontSize={48}
-                        align="left"
-                        textTransform={"uppercase"}
+                    className="drop-shadow-[0_2.2px_2.2px_rgba(255,255,255,5)] text-[#EA3525] mb-2"
+                    fontFamily="sans-serif"
+                    fontWeight={700}
+                    fontSize={32}
+                    align="left"
+                    textTransform="uppercase"
                     >
-                        {"Makassar Virtual Economic Center"}
+                    {"Makassar Virtual Economic Center"}
+                    </Typography>
+
+                    <Typography
+                    className="drop-shadow-[0_2.2px_2.2px_rgba(255,255,255,5)] text-[#fff] mb-2"
+                    fontFamily="sans-serif"
+                    fontWeight={400}
+                    fontSize={32}
+                    align="left"
+                    textTransform="uppercase"
+                    marginRight={25}
+                    >
+                    {namaAplikasi}
                     </Typography>
                 </Grid>
             </div>
+
 
             <div className={"flex items-center justify-center w-[80%] h-[80vh] mx-auto"}>
                 {/*Loading animation*/}
