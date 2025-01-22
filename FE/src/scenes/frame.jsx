@@ -3,26 +3,55 @@ import React, {useEffect, useState} from "react";
 import Logo from '../assets/image/makassar.png';
 import PatternImage from '../assets/image/patternbg.png'
 import "../tailwind.css"
-import Cookies from "js-cookie";
-import {useNavigate} from "react-router-dom";
+import {useNavigate, useParams} from "react-router-dom";
+import {useAuth} from "../auth/auth_provider";
+import {HeaderData} from "../data/headerCostum";
 
 
 const Frame = () => {
+    const { id } = useParams();
+
     const [isLoading, setLoading] = useState(true);
-    const url = Cookies.get('url')
-    const namaAplikasi = Cookies.get('namaAplikasi')
     const navigate = useNavigate();
 
+    const [dataDashboard, setDataDashboard] = useState(null);
+    const {token} = useAuth();
+
+    const getApp = () => {
+        fetch(process.env.REACT_APP_API_URL + "api/listdashboard/" + id, {
+            method: "get",
+            headers: HeaderData(token),
+        })
+            .then((res) => {
+                return res.json();
+            })
+            .then((res) => {
+                setDataDashboard(res);
+                console.log(res)
+            })
+            .catch((err) => {
+                console.log(err);
+            });
+    }
+
+    useEffect(() => {
+        if (!dataDashboard) {
+            getApp();
+        }
+
+    }, [dataDashboard])
 
 
     useEffect(() => {
-        try {
-            new URL(url)
-        } catch (e) {
-            console.error("Bukan sebuah URL: `"+url+"`")
-            navigate("/")
+        if (dataDashboard) {
+            try {
+                new URL(dataDashboard.url)
+            } catch (e) {
+                console.error("Bukan sebuah URL: `"+dataDashboard.url+"`")
+                navigate("/")
+            }
         }
-    }, [url]);
+    }, [dataDashboard]);
 
     return (
         <Box sx={{
@@ -72,7 +101,7 @@ const Frame = () => {
                     textTransform="uppercase"
                     marginRight={25}
                     >
-                    {namaAplikasi}
+                    {dataDashboard ? dataDashboard.namaAplikasi : ""}
                     </Typography>
                 </Grid>
             </div>
@@ -121,7 +150,7 @@ const Frame = () => {
                 <iframe
                     hidden={isLoading}
                     title={"aplikasi"}
-                    src={url}
+                    src={dataDashboard ? dataDashboard.url : ""}
                     className="h-full w-full rounded-xl"
                     onLoad={() => setLoading(false)}
                     onError={(e) => console.log(e.target)}

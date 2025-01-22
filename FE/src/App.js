@@ -58,7 +58,7 @@ const App = () => {
         <Route index element={<Dashboard />} />
         <Route path="login" element={<Login />} />
         <Route path="dashboard" element={<Dashboard />} />
-        <Route path="app" element={<Frame />} />
+        <Route path="app/:id" element={<Frame />} />
 
         {/* Protected Admin Routes */}
         <Route path="admin" element={<ProtectedLayout />}>
