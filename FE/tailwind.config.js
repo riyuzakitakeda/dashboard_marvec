@@ -6,6 +6,6 @@ module.exports = {
       screens: {'8': '1242px','9': '1400px', '10': '1555px', '12': '1872px'}
     },
   },
-  plugins: [],
+  plugins: [ require("@designbycode/tailwindcss-text-stroke")],
 }
 

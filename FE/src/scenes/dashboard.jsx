@@ -69,7 +69,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className={`bg-[url(/src/assets/image/background_losari.webp)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-[100%] overflow-x-hidden`}>
+            <div className={`bg-[url(/src/assets/image/bg_losari.png)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-[100%] overflow-x-hidden`}>
                 <Grid container sx={{
                     padding: 2,
                     position: 'relative',
@@ -83,12 +83,13 @@ const Dashboard = () => {
                     </Grid>
                     <Grid item>
                         <Typography
-                            className={"drop-shadow-[0_1.2px_1.2px_rgba(255,255,255,5)] text-[#EA3525] mb-2"}
+                            className={"text-stroke text-[#EA3525] mb-2 text-stroke-white"}
                             fontFamily={'sans-serif'}
                             fontWeight={700}
                             fontSize={48}
                             align="left"
                             textTransform={"uppercase"}
+                        
                         >
                             {"Makassar Virtual Economic Center"}
                         </Typography>
