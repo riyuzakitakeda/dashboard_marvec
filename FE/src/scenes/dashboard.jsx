@@ -69,7 +69,7 @@ const Dashboard = () => {
 
     return (
         <>
-            <div className={`bg-[url(/src/assets/image/bg_losari.png)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-[100%] overflow-x-hidden`}>
+            <div className={`bg-[url(/src/assets/image/bg_losari.webp)] bg-cover bg-no-repeat bg-[center_top_-6rem] min-h-screen w-full overflow-x-hidden`}>
                 <Grid container sx={{
                     padding: 2,
                     position: 'relative',
