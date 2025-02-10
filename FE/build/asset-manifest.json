@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/static/css/main.71555364.css",
-    "main.js": "/static/js/main.5380385d.js",
+    "main.css": "/static/css/main.1e2a23bf.css",
+    "main.js": "/static/js/main.021776f6.js",
     "static/js/453.16de3f8c.chunk.js": "/static/js/453.16de3f8c.chunk.js",
     "static/media/patternbg.png": "/static/media/patternbg.dc337611e442469c5bb7.png",
     "static/media/backgroud_login.png": "/static/media/backgroud_login.9046279b781deb321bef.png",
@@ -13,12 +13,12 @@
     "static/media/logo_refleksi2.png": "/static/media/logo_refleksi2.0c73ef1fcebb7e2ba6aa.png",
     "static/media/logo_musrembang.png": "/static/media/logo_musrembang.307352ecdb821bf3c984.png",
     "index.html": "/index.html",
-    "main.71555364.css.map": "/static/css/main.71555364.css.map",
-    "main.5380385d.js.map": "/static/js/main.5380385d.js.map",
+    "main.1e2a23bf.css.map": "/static/css/main.1e2a23bf.css.map",
+    "main.021776f6.js.map": "/static/js/main.021776f6.js.map",
     "453.16de3f8c.chunk.js.map": "/static/js/453.16de3f8c.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.71555364.css",
-    "static/js/main.5380385d.js"
+    "static/css/main.1e2a23bf.css",
+    "static/js/main.021776f6.js"
   ]
 }

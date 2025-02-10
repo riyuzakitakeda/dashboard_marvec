@@ -79,11 +79,11 @@ const Frame = () => {
         }}>
            <div className="flex justify-start items-center mb-1 row" style={{marginLeft: '160px'}}>
                 <Grid item>
-                    <img src={Logo} alt="icon" style={{ width: 180, height: 110, marginRight: 10 }} />
+                    <img src={Logo} alt="icon" style={{ width: 180, height: 110, marginRight: 10, marginBottom: 12 }} />
                 </Grid>
                 <div item className="flex justify-between w-full mt-1" >
                     <Typography
-                    className="drop-shadow-[0_2.2px_2.2px_rgba(255,255,255,5)] text-[#EA3525]"
+                    className="text-stroke text-[#EA3525] text-stroke-white"
                     fontFamily="sans-serif"
                     fontWeight={700}
                     fontSize={26}
