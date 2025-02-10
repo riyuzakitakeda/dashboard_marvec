@@ -715,10 +715,6 @@ video {
   min-height: 100vh;
 }
 
-.w-\[100\%\] {
-  width: 100%;
-}
-
 .w-\[140px\] {
   width: 140px;
 }
@@ -780,8 +776,8 @@ video {
   border-width: 1px;
 }
 
-.bg-\[url\(\/src\/assets\/image\/bg_losari\.png\)\] {
-  background-image: url(/src/assets/image/bg_losari.png);
+.bg-\[url\(\/src\/assets\/image\/bg_losari\.webp\)\] {
+  background-image: url(/src/assets/image/bg_losari.webp);
 }
 
 .bg-gradient-to-br {
@@ -839,10 +835,6 @@ video {
 
 .bg-\[center_top_-6rem\] {
   background-position: center top -6rem;
-}
-
-.bg-\[49\%\] {
-  background-position: 49%;
 }
 
 .bg-no-repeat {
