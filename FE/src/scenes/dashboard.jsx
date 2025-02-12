@@ -1,15 +1,47 @@
-import { Box, Button, Card, Grid, Typography } from "@mui/material";
+import { Grid, Typography, Box } from "@mui/material";
 import React, { useEffect } from "react";
 import { useState } from "react";
 import { HeaderData } from "../data/headerCostum";
 import { useAuth } from "../auth/auth_provider";
-import judul from "../assets/image/judul.png";
-import background from "../assets/image/background.png";
+import "../tailwind.css"
+import Logo from "../assets/image/makassar-white.png";
+import LogoPemkot from "../assets/image/logoPemkot.png";
 
+const DashboardCard = ({id, number, namaAplikasi, namaOpd}) => {
+
+    return (
+        <div className={"relative text-white w-[140px] h-[86px] rounded-xl bg-gradient-to-tr from-[#280606] from-0% to-[#8E1616] to-65% drop-shadow-xl "}>
+            <p className={"absolute left-2 top-2 font-sans font-extrabold text-2xl"}>{number}</p>
+            <div className={"w-full mt-3 ml-12 flex justify-start font-sans text-start"}>
+                <div>
+                    <p className={"text-[9px]"}>{namaOpd}</p>
+                    <p className={"text-[12spx] font-bold"} title={namaAplikasi}>
+                        {namaAplikasi.length > 9
+                            ? namaAplikasi.substring(0, 9) + "..."
+                            : namaAplikasi}
+                    </p>
+                </div>
+            </div>
+
+            {/*Bottom Part*/}
+            <a
+                target={"_blank"} rel={"noreferrer"}
+                href={`#/app/${id}`}
+                className={"flex items-center justify-center absolute rounded-b-xl bottom-0 left-0 w-full h-1/3 bg-gradient-to-br from-[#888888] from-0% via-[#DEDEDE] via-40% to-white to-70%"}>
+                <p className={"text-[#8E1616] font-bold font-sans text-center items-center"}>Open
+                    Link</p>
+                <svg xmlns="http://www.w3.org/2000/svg" height="12px" viewBox="0 -960 960 960" width="12px"
+                     fill="#8E1616">
+                    <path d="m321-80-71-71 329-329-329-329 71-71 400 400L321-80Z"/>
+                </svg>
+            </a>
+        </div>
+    )
+}
 
 
 const Dashboard = () => {
-    const [dataDashboard, setDataDashboard] = useState([]);
+    const [dataDashboard, setDataDashboard] = useState(null);
     const { token } = useAuth();
 
     const getListDashboard = () => {
@@ -36,24 +68,23 @@ const Dashboard = () => {
     }, [getListDashboard])
 
     return (
-        <Box sx={{
-            backgroundImage: `url(${background})`,
-            backgroundSize: 'cover',
-            backgroundRepeat: 'no-repeat',
-            backgroundPosition: 'center',
-            height: '100vh',
-            width: '100%',
-            overflow: 'hidden',
-            // background: 'linear-gradient(90deg, #000 0.11%, #920404 50%)',
-            padding: 2
-        }}>
+        <Box>
             <Grid container sx={{
                 padding: 2
             }}>
-                <Grid item container xs={12} sx={{
-                    justifyContent: 'center',
-                }}>
-                    <img src={judul} alt="judul" style={{ height: "90px" }} />
+                <Grid item xs={12} >
+                    <Typography
+                    fontFamily={'sans-serif'}
+                    fontWeight={700}
+                    fontSize={30}
+                    align="center"
+                    textTransform={"uppercase"}
+                    sx={{
+                        color: 'rgb(199, 10, 10)'
+                    }}
+                    >
+                        {"Makassar Vitual Economic Center"}
+                    </Typography>
                 </Grid>
             </Grid>
             <Grid container direction={"row"}>
@@ -61,39 +92,18 @@ const Dashboard = () => {
                     dataDashboard
                         ? dataDashboard.map((element, index) => (
                             <Grid item container xs={12} sm={12} md={1} paddingX={0.5}>
-                                <Grid item sx={{
+                                <Box sx={{
+                                    padding: "20px",
+                                    marginBottom: "5px",
+                                    border: 1,
+                                    borderRadius: 2,
                                     borderRadius: '10px',
-                                    background: 'linear-gradient(90deg, #8E1616 0.11%, #280606 71.13%)',
+                                    border: '2px solid rgba(255, 253, 253, 0.89)',
+                                    background: 'linear-gradient(90deg, #000 0.11%,rgb(199, 10, 10) 71.13%)',
                                     width: "100%"
                                 }}>
-                                    <Grid item container direction={'column'}>
-                                        <Grid item container xs={12} direction={"row"}>
-                                            <Grid item xs={4}>
-                                                <Typography fontSize={30} color={'white'} align="center">
-                                                    {
-                                                        index + 1
-                                                    }
-                                                </Typography>
-                                            </Grid>
-                                            <Grid container item xs={8} direction={"column"}>
-                                                <Grid item>
-                                                    <Typography color={'white'} fontSize={10}>
-                                                        {element.namaOpd}
-                                                    </Typography>
-                                                </Grid>
-                                                <Grid item>
-                                                    <Typography color={'white'} fontSize={12}>
-                                                        {
-                                                            element.namaAplikasi.length > 15 ?
-                                                                element.namaAplikasi.substring(0, 15) + ". . ."
-                                                                : element.namaAplikasi
-                                                        }
-                                                    </Typography>
-                                                </Grid>
-                                            </Grid>
-                                        </Grid>
-
-                                        {/* <Grid item xs={12}>
+                                    <Grid item container direction={'row'}>
+                                        <Grid item xs={12}>
                                             <Typography color={'white'} fontSize={10}>
                                                 {element.namaOpd}
                                             </Typography>
@@ -135,17 +145,10 @@ const Dashboard = () => {
                                                     index + 1
                                                 }
                                             </Typography>
-                                        </Grid> */}
+                                        </Grid>
                                     </Grid>
-                                    <Grid container xs={12} justifyContent={'center'} sx={{
-                                        background: 'linear-gradient(90deg, #EEEEEE 0.11%, #888888 71.13%)',
-                                    }}>
-                                        <Typography color={'white'} fontSize={10}>
-                                            {"Open Link >"}
-                                        </Typography>
-                                    </Grid>
-                                </Grid>
 
+                                </Box>
                             </Grid>
                         ))
                         : ''
