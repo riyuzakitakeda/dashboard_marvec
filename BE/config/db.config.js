@@ -1,5 +1,5 @@
 module.exports = {
-  HOST: "localhost",
+  HOST: "103.151.20.127",
   USER: "devict",
   PASSWORD: "Makassar@2023DB",
   DB: "marvec_dashboard",
